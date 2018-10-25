@@ -17,11 +17,11 @@ class Chat {
         this._connections = null;
     }
 
-    async run() {
+    async run({socketOptions}) {
         const db = await this._tryConnectToMongo();
         this._users = new Users(db);
         this._messages = new Messages(db);
-        this._connections = new Connections();
+        this._connections = new Connections(socketOptions);
 
         this.subscribeSent(message => this._messages.create(message));
         this.subscribeSent(message => this._connections.broadcastMessage(message));

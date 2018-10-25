@@ -67,7 +67,8 @@ if (mongoURL == null) {
  */
 const chat = new Chat({mongoURL, mongoURLLabel});
 
-chat.run();
+const socketOptions = {server: require('http').Server(app)};
+chat.run({socketOptions});
 
 app.get('/', function (req, res) {
     res.render('index.html', {pageCountMessage: null});

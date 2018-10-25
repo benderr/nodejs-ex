@@ -15,7 +15,8 @@
     "morgan": "^1.7.0",
     "object-assign": "4.1.0",
     "uuid": "^3.3.2",
-    "websocket": "^1.0.28"
+    "websocket": "^1.0.28",
+    "ws": "^6.1.0"
   },
   "engine": {
     "node": "*",
