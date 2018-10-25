@@ -32,7 +32,7 @@ class Connections {
             const token = (head || {})['X-TOKEN'];
 
             if (!token)
-                socket.close();
+                socket && socket.close();
 
             // accept connection - you should check 'request.origin' to
             // make sure that client is connecting from your website
