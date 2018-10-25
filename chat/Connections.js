@@ -4,7 +4,7 @@ class Connections {
 
     constructor(options) {
         this._connections = [];
-        this._options = options || {port: 1337};
+        this._options = options || {port: 8000};
         this._configureSocket();
     }
 
